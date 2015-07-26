@@ -1,0 +1,25 @@
+﻿.logo-white{ position:relative; top:-15px; left:}
+.navbar .navbar-brand>img {max-height: 125px;}
+.carousel-inner .item img{width:100%;}
+#myCarousel{ max-height:100%; overflow:hidden;}
+.carousel-caption{top: 230px;}
+.carousel-caption h2{color: white; text-shadow: 0px 0px 1px black;}
+.carousel-caption p{color: #1F9DD1; font-size: 20px;}
+.carousel-indicators{ bottom: 235px;}
+.carousel-control .glyphicon-chevron-right, .carousel-control .glyphicon-chevron-left{top: 35%;}
+.sep-top-lg { padding-top: 3.0em;}
+h3.upper, h5.team-name{ color: #1F9DD1;}
+.icon-box.icon-lg .icon-content { font-size: 3em;}
+.icon-box .glyphicon{  top: 4px; left: 2px;}
+.parallax { background-color: #fff; }
+.icon-horizontal .icon-box-content{height: 180px;}
+.icon-box-content h5{color: #1F9DD1;}
+.copyright{background-color: #343434;}
+h5.lec1{ margin-top: 0;}
+.lectures h5{ margin-bottom: 20px;}
+.copyright, .page{margin-top: -23px;}
+.cover-div{ padding-top: 12.5em;}
+.section-title h3{ color: white; text-shadow: 0px 0px 2px black;}
+.about_us_text{ padding-left: 30px; padding-right: 30px; text-align: justify;}
+.link_div{ margin-top: 20px;}
+.link_div_lg{ margin-bottom: 40px;}

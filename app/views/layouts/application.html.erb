@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Asmeiitroorkee</title>
+  <title>ASME IIT ROORKEE</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="Keywords" content="asme, mechanical, engineering, iit, roorkee, iit roorkee, asme iitr, iitr">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>  
+  <link rel="icon" href="https://www.asme.org/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="https://www.asme.org/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700" hreflang="en">
 </head>
 <body>
-
+<%= render 'layouts/static_pages' %>
 <%= yield %>
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

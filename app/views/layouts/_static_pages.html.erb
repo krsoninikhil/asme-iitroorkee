@@ -1,0 +1,64 @@
+    <style>#qLtempOverlay{display:none;}</style>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700">
+    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an strong outdated browser. <br>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+<div class="page">
+<!-- Start Nav Section-->
+
+<nav id="main-navigation" role="navigation" class="navbar navbar-fixed-top navbar-standard">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle"><span class="glyphicon glyphicon-align-justify"></span></button><a href="/" class="navbar-brand"><img src="/assets/logo.jpg" alt="" class="logo-white"><img src="/assets/logo.jpg" alt="" class="logo-dark"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right service-nav">
+				<li><a id="dropdownMenuLogin" href="http://ottavio.kleis.agency/home-1.html#" data-toggle="dropdown" class="upper dropdown-toggle">Login</a>
+					<div aria-labelledby="dropdownMenuLogin" class="dropdown-menu widget-box">
+						<form>
+							<div class="form-group">
+								<label class="sr-only">Username or Email</label>
+								<input type="text" value="" placeholder="Username or Email" name="" class="form-control input-lg">
+							</div>
+							<div class="form-group">
+								<label class="sr-only">Password</label>
+								<input type="password" value="" placeholder="Password" name="" class="form-control input-lg">
+							</div>
+							<div class="form-inline form-group">
+								<button type="button" class="btn btn-primary btn-xs">Login</button>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"><small> Remember me</small>
+									</label>
+								</div>
+							</div><a href="http://ottavio.kleis.agency/home-1.html#"><small>Lost your Password?</small></a>
+						</form>
+					</div>
+				</li>              
+			</ul>
+			<button type="button" class="navbar-toggle"><i class="fa fa-close fa-lg"></i></button>
+			<ul class="nav yamm navbar-nav navbar-left main-nav">
+				<li class="dropdown"><a href="<%= activities_path %>" title="Activities" data-toggle="dropdown" data-hover="dropdown" id="menu_item_activities" data-ref="/activities" class="dropdown-toggle">Activities<span class="caret"></span></a>
+					<ul aria-labelledby="menu_item_activities" class="dropdown-menu">
+									<li><a href="<%= activities_path %>#lectures" title="Lectures" data-ref="home-3">Lectures</a></li>
+									<li><a href="<%= activities_path %>#workshops" title="workshops" data-ref="home-3">Workshops</a></li>
+					</ul>
+				</li>
+				<!-- istanzio un id univoco-->
+				<li class="dropdown"><a href="events" title="Events" data-toggle="dropdown" data-hover="dropdown" id="menu_item_events" data-ref="#" class="dropdown-toggle">Events<span class="caret"></span></a>
+					<ul aria-labelledby="menu_item_events" class="dropdown-menu">
+					 <li><a href="<%= events_path %>">Involvements</a></li>
+					 <li><a href="<%= events_path %>#organised">Events Organised</a></li>
+					</ul>
+				</li>
+				<!-- istanzio un id univoco-->
+				<li><a href="/#about_us" id="menu_item_about_us">About Us</a></li>
+				<!-- istanzio un id univoco-->
+				<li><a href="/mentorship-programme" id="menu_item_discussion">Mentorship Programme</a></li>
+				<!-- <li><a href="/discussion" id="menu_item_discussion">Discussion</a></li> -->
+				<li><a href="/contact-us" id="menu_item_contact_us">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
