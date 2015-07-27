@@ -12,6 +12,7 @@ class StaticPagesController < ApplicationController
   end
 
   def mentorship
+		@user = 'nikhil'
   end
 	
 	def contact_us

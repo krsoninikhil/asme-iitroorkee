@@ -1,2 +1,57 @@
-<h1>StaticPages#mentorship</h1>
-<p>Find me in app/views/static_pages/mentorship.html.erb</p>
+<section class="parallax cover-div" style="background-image: url(/assets/mentor.jpg); background-size: 110%; background-position: 62.2364802933089% 3.11824%;">       
+	<div class="  sep-top-2x sep-bottom-1x">
+		<div class="container">
+			<div class="text-center sep-bottom-md">
+				<div class="section-title light">
+					<h3 class="upper">Robotics Mentorship Programme</h3>
+				</div>
+			</div>			
+		</div>
+	</div>
+</section>
+			
+<section id="smartexchange" class="sep-top-2x sep-bottom-2x">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="section-title">
+					<p class="justify-text">
+					This program was started with the objective of sharing knowledge & experience in the field of robotics amongst the first year students.
+					</p><p class="justify-text">
+					We enroll around 100 students under this mentorship program. Students are divided into groups of five and mentors from the executive team are assigned to guide them. Every lecture and workshop is followed by an interactive session with the mentor of each group and members of the team explains the various concepts covered in detail and further study material is provided to them by the mentor. 
+					</p><p class="justify-text">
+					The students are regularly assessed on the progress they had made by attending the lectures and workshops. The mentors are available to clear their doubts and help them understand the concepts more clearly and in greater depth. Special lectures are also held by the mentors for their group on their demand. 
+					</p><p class="justify-text">
+					At last we organize a Line following workshop for the mentees where they are given hands on experience on Line following Robot and thus they are able to make their own line follower.
+					</p><p class="justify-text">
+					Due to limitation of resources and to ensure the best sharing of knowledge, a minimal sum of Rs. 250 as registration fee is required to enroll in the programme.
+					</p>					
+				</div>
+			</div>
+			<div class="col-md-offset-1 col-md-5">
+				<h5 class="text-center">Register for the programme</h5><br />
+				<div class="row">
+					<div class="col-md-12 registration-form">
+						<%= form_for @user do |f| %>
+						<%= f.label :name %>
+						<%= f.text_field :name, class: "form-control" %>
+						<br />
+						<%= f.label :email %>
+						<%= f.email_field :email, class: "form-control" %>
+						<br />
+
+						<%= f.label :contact, "Contact Number" %>
+						<%= f.number_field :contact, class: "form-control" %>
+						<br />
+
+						<%= f.label :password %>
+						<%= f.password_field :password, class: "form-control" %>
+						<br />
+
+						<%= f.submit "Register", class: "btn btn-primary" %>
+						<% end %>
+					</div>
+				</div>
+		</div>
+	</div>
+</section>

@@ -1,5 +1,6 @@
-﻿.logo-white{ position:relative; top:-15px; left:}
+﻿.logo-white, .logo-dark{ position:relative; top:-15px;}
 .navbar .navbar-brand>img {max-height: 125px;}
+.opaque .navbar-brand>img { height: 90px;}
 .carousel-inner .item img{width:100%;}
 #myCarousel{ max-height:100%; overflow:hidden;}
 .carousel-caption{top: 230px;}
@@ -23,3 +24,9 @@ h5.lec1{ margin-top: 0;}
 .about_us_text{ padding-left: 30px; padding-right: 30px; text-align: justify;}
 .link_div{ margin-top: 20px;}
 .link_div_lg{ margin-bottom: 40px;}
+.justify-text{ text-align: justify;}
+#signup_link{ float:right;}
+#signup_link:hover { text-decoration:underline; cursor: pointer;}
+.signup_title{text-align: center; color: #1F9DD1;}
+/* .form-control{ border-bottom: 1px solid gray;} */
+form label {font-weight: 700;}
