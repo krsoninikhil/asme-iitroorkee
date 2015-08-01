@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  contact_no: MyString
+  enrollment_no: 1
+  branch: MyString
+  sex: 1
+  receipt_no: MyString
+
+two:
+  user_id: 1
+  contact_no: MyString
+  enrollment_no: 1
+  branch: MyString
+  sex: 1
+  receipt_no: MyString

@@ -1,0 +1,18 @@
+﻿<% if params[:login] == "false" %>
+	<div class="alert alert-danger col-md-offset-4 col-md-4 alert_login" ><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Please login to perform this action.</div>
+	<script>$(document).ready(function(){
+	$("#dropdownMenuLogin").click();
+	});</script>
+<% end %>
+<% if params[:login] == "failed" %>
+	<div class="alert alert-danger col-md-offset-4 col-md-4 alert_login"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Incorrect Email/Password combination.</div>
+	<script>$(document).ready(function(){
+	$("#dropdownMenuLogin").click();
+	});</script>
+<% end %>
+<% if params[:signup] == "failed" %>
+	<script>$(document).ready(function(){
+	$("#signup_link").click();
+	$("#signup_message").html('<div class="alert alert-danger">Please provide the valid details and make sure your password is atleast 6 character long.</div>');
+	});</script>
+<% end %>

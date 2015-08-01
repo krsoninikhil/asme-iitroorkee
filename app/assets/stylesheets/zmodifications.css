@@ -30,3 +30,7 @@ h5.lec1{ margin-top: 0;}
 .signup_title{text-align: center; color: #1F9DD1;}
 /* .form-control{ border-bottom: 1px solid gray;} */
 form label {font-weight: 700;}
+.widget-box ul{ list-style-type: none;}
+.widget-box li{ padding: 5px; }
+.bold{ font-weight: 600;}
+.alert_login{ position: absolute; top: 110px; z-index: 1;}

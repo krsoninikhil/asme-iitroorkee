@@ -1,0 +1,81 @@
+<section class="parallax cover-div" style="background-image: url(/assets/profile.jpg); background-size: 110%; background-position: 55.436091% 19.402456%;">       
+	<div class="sep-top-2x sep-bottom-1x">
+		<div class="container">
+			<div class="text-center sep-bottom-md">
+				<div class="section-title light">
+					<h3 class="upper"><%= current_user.name %></h3>
+				</div>
+			</div>			
+		</div>
+	</div>
+</section>
+			
+<section id="smartexchange" class="sep-top-2x sep-bottom-2x">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="section-title">
+					<h5 class="bordered-left upper"><%= current_user.email %></h5>
+					<div class="col-md-5"><img src="/assets/<%= @profile_pic %>" style="max-width: 200px; margin-top: 15px; margin-bottom: 25px;"></div>
+					<div class="col-md-7">
+							<ul style="margin-top:15px;">
+								<li><span class="bold">Contact No.:</span> <% if is_mentee?? contact_no = current_mentee.contact_no : "Not Found" %><%= contact_no  %><% end  %></li>
+								<li><span class="bold">Enrollment No.:</span> <%= current_mentee.enrollment_no %></li>
+								<li><span class="bold">Branch:</span> <%= current_mentee.branch %></li>
+								<li><span class="bold">Receipt No.:</span> <%= current_mentee.receipt_no %></li><br />
+								<%= link_to "Follow the link to download the lectures.", "/activities#lectures" %><br /><br />
+								<%= link_to "Download I-Card", "/download-icard", class: "btn btn-default", target: "_blank" %>							
+							</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-offset-1 col-md-5">
+				<h5 class="text-center"><% if is_mentee? %>Fill all the details to download I-Card <% else %> Fill the details to register for mentorship Programme <% end %></h5><br />
+				<div class="row">
+					<div class="col-md-12 registration-form">
+						<%= form_for @mentee, :url => "/edit-profile" do |f| %>
+						
+						<%= f.label :contact_no, "Contact Number" %>
+						<% if is_mentee?? contact_no = current_mentee.contact_no : "" %><% end %>
+						<%= f.number_field :contact_no, class: "form-control", value: contact_no %>						
+						<br />
+						
+						<%= f.label :enrollment_no, "Enrollment Number" %>
+						<% if is_mentee?? enrollment_no = current_mentee.enrollment_no : "" %><% end %>
+						<%= f.number_field :enrollment_no, value: enrollment_no , class: "form-control" %>
+						
+						<br />
+						<%= f.label :branch %>
+						<select name="mentee[branch]" id="branch" class="form-control"><option value="ARCD">Architecture Department</option><option value="BTD">Biotechnology Department</option><option value="CHED">Chemical Engineering Department</option><option value="CYD">Chemistry Department</option><option value="CED">Civil Engineering Department</option><option value="EED">Electrical Engineering Department</option><option value="ECED">Electronics and Communication Engineering Department</option><option value="MSD">Management Studies Department</option><option value="MIED">Mechanical and Industrial Engineering Department</option><option value="MMED">Metallurgical and Materials Engineering Department</option><option value="PTD">Paper Technology Department</option><option value="PHD">Physics Department</option><option value="WRDMD">Water Resources Development and Management Department</option><option value="AHEC">Alternate Hydro Energy Centre</option></select>
+						<br />
+
+						<%= f.label :receipt_no, "Fee Reciept Number" %>
+						<% if is_mentee?? receipt = current_mentee.receipt_no : "" %><% end %>
+						<%= f.text_field :receipt_no, class: "form-control", value: receipt,  placeholder: "Reciept No." %>
+						<br />
+						<div id="mentee_sex">
+							<label><%= f.radio_button :sex, 1 %>Male </label>&nbsp;
+							<label><%= f.radio_button :sex, 0 %>Female </label>&nbsp;
+							<label><%= f.radio_button :sex, 2 %>Other </label>&nbsp;
+						</div>
+						
+						<br />
+						<%= f.label :image %>
+						<%= f.file_field :image %>
+						<br />
+						<br />
+
+						<%= f.submit "Save", class: "btn btn-primary" %>
+						<% end %>
+						<script>$(document).ready(function(){
+								var branch= "<%= current_mentee.branch %>";
+								$('#branch option[value="'+branch+'"]').attr("selected", "selected");
+								var sex = "<%= current_mentee.sex %>";
+								$('#mentee_sex input[value="'+sex+'"]').attr("checked", "checked");
+							});</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  get 'index' => 'static_pages#index'
-
-  get 'activities' => 'static_pages#activities'
-
-  get 'events' => 'static_pages#events'
-
-  get 'involvements' => 'static_pages#involvements'
-
-  get 'mentorship' => 'static_pages#mentorship'
+	post 'login' => 'sessions#create'
+	get 'logout' => 'sessions#destroy'
+  post 'create' => 'users#create'
+	post 'mentorship-registration' => 'users#mentee_entry'
+	get 'my-profile' => 'users#profile'
+  post 'edit-profile' => 'users#edit_profile'
 	
+  get 'index' => 'static_pages#index'
+  get 'activities' => 'static_pages#activities'
+  get 'events' => 'static_pages#events'
+  get 'involvements' => 'static_pages#involvements'
+  get 'mentorship' => 'static_pages#mentorship'	
   get 'contact-us' => 'static_pages#contact_us'
 
   # The priority is based upon order of creation: first created -> highest priority.

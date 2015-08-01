@@ -14,26 +14,45 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right service-nav">
-				<li><a id="dropdownMenuLogin" href="http://ottavio.kleis.agency/home-1.html#" data-toggle="dropdown" class="upper dropdown-toggle">Login</a>
+				<li>
+					<a id="dropdownMenuLogin" href="#" data-toggle="dropdown" class="upper dropdown-toggle">
+						<% if logged_in? %><%= current_user.name %><span class="caret"></span>
+						<% else %> Login
+						<% end %>
+					</a>
 					<div aria-labelledby="dropdownMenuLogin" class="dropdown-menu widget-box">
-						<form>
-							<div class="form-group">
-								<label class="sr-only">Username or Email</label>
-								<input type="text" value="" placeholder="Username or Email" name="" class="form-control input-lg">
-							</div>
-							<div class="form-group">
-								<label class="sr-only">Password</label>
-								<input type="password" value="" placeholder="Password" name="" class="form-control input-lg">
-							</div>
-							<div class="form-inline form-group">
-								<button type="button" class="btn btn-primary btn-xs">Login</button>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox"><small> Remember me</small>
-									</label>
+						<% if logged_in? %>
+							<ul>
+								<li>
+									<% if is_mentee? %>
+										<%= link_to "My Profile", "/my-profile" %>
+									<% else %>
+										<%= link_to "Mentorship Registration", "/my-profile" %>
+									<% end %>
+								</li>
+								<li><%= link_to "Logout", "/logout" %></li>
+							</ul>
+						<% else %>
+							<%= form_for(:session, url: "/login") do |f| %>								
+								<div class="form-group">
+									<%= render "shared/error_messages" %>
+									<label class="sr-only">Email</label>
+									<%= f.email_field :email, class: "form-control input-lg", placeholder: "Email" %>
 								</div>
-							</div><a href="#"><small>Lost your Password?</small></a><span id="signup_link" data-toggle="modal" data-target="#signUpModal">SignUp</span>
-						</form>
+								<div class="form-group">
+									<label class="sr-only">Password</label>
+									<%= f.password_field :password, class: "form-control input-lg", placeholder: "Password" %>
+								</div>
+								<div class="form-inline form-group">
+									<%= f.submit "Login", class: "btn btn-primary btn-xs" %>
+									<!-- <div class="checkbox" style="float: right;">
+										<label>
+											<%= f.check_box :remember_me %> Remember me
+										</label>
+									</div> -->
+								</div><a href="#"><small>Lost your Password?</small></a><span id="signup_link" data-toggle="modal" data-target="#signUpModal">SignUp</span>
+							<% end %>
+						<% end %>							
 					</div>
 				</li>              
 			</ul>
@@ -62,3 +81,4 @@
 		</div>
 	</div>
 </nav>
+<%= render "shared/messages" %>

@@ -1,5 +1,5 @@
 <section class="parallax cover-div" style="background-image: url(/assets/mentor.jpg); background-size: 110%; background-position: 62.2364802933089% 3.11824%;">       
-	<div class="  sep-top-2x sep-bottom-1x">
+	<div class="sep-top-2x sep-bottom-1x">
 		<div class="container">
 			<div class="text-center sep-bottom-md">
 				<div class="section-title light">
@@ -32,26 +32,24 @@
 				<h5 class="text-center">Register for the programme</h5><br />
 				<div class="row">
 					<div class="col-md-12 registration-form">
-						<%= form_for @user do |f| %>
-						<%= f.label :name %>
-						<%= f.text_field :name, class: "form-control" %>
+						<%= form_for @user, :url => "/mentorship-registration" do |f| %>
+						<%= render "shared/error_messages" %>
+						<%= f.label :name, "Full Name" %>
+						<%= f.text_field :name, class: "form-control", placeholder: "e.g. Nikhil Kumar Soni" %>
 						<br />
 						<%= f.label :email %>
-						<%= f.email_field :email, class: "form-control" %>
-						<br />
-
-						<%= f.label :contact, "Contact Number" %>
-						<%= f.number_field :contact, class: "form-control" %>
+						<%= f.email_field :email, class: "form-control", placeholder: "you@domain.com" %>
 						<br />
 
 						<%= f.label :password %>
-						<%= f.password_field :password, class: "form-control" %>
+						<%= f.password_field :password, class: "form-control", placeholder: "******" %>
 						<br />
 
 						<%= f.submit "Register", class: "btn btn-primary" %>
 						<% end %>
 					</div>
 				</div>
+			</div>
 		</div>
 	</div>
 </section>
