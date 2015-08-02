@@ -20,5 +20,6 @@ class StaticPagesController < ApplicationController
   end
 	
 	def contact_us
+		@user = User.new
 	end
 end

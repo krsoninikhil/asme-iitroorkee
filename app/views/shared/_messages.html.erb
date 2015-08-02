@@ -16,3 +16,23 @@
 	$("#signup_message").html('<div class="alert alert-danger">Please provide the valid details and make sure your password is atleast 6 character long.</div>');
 	});</script>
 <% end %>
+<% if params[:details_check] == "failed" %>
+	<script>$(document).ready(function(){
+	$("#id_card_msg").html('<div class="alert alert-danger">Please provide all the details including a picture to downlaod the I-Card.</div>');
+	});</script>
+<% end %>
+<% if params[:saved] == "true" %>
+	<script>$(document).ready(function(){
+	$("#id_card_msg").html('<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Profile updated.</div>');
+	});</script>
+<% end %>
+<% if params[:conducted] == "false" %>
+	<script>$(document).ready(function(){
+	$("#download_msg").html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>This lecture has not been conducted yet.</div>');
+	});</script>
+<% end %>
+<% if params[:registration] == "failed" %>
+	<script>$(document).ready(function(){
+	$("#registration_error").html('<div class="alert alert-danger">Please provide all the valid details and make sure your password is atleast 6 character long.</div>');
+	});</script>
+<% end %>

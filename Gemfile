@@ -40,6 +40,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'coffee-script-source', '1.8.0'
 gem 'bcrypt',               '> 3.1.7'
+gem 'pdfkit'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a

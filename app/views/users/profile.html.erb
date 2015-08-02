@@ -16,15 +16,16 @@
 			<div class="col-md-6">
 				<div class="section-title">
 					<h5 class="bordered-left upper"><%= current_user.email %></h5>
-					<div class="col-md-5"><img src="/assets/<%= @profile_pic %>" style="max-width: 200px; margin-top: 15px; margin-bottom: 25px;"></div>
+					<div class="col-md-5"><img src="/assets/<%= @profile_pic %>" style="max-width: 200px; margin-bottom: 25px;"></div>
 					<div class="col-md-7">
-							<ul style="margin-top:15px;">
+							<p id="id_card_msg"></p>
+							<ul id="saved_details">
 								<li><span class="bold">Contact No.:</span> <% if is_mentee?? contact_no = current_mentee.contact_no : "Not Found" %><%= contact_no  %><% end  %></li>
 								<li><span class="bold">Enrollment No.:</span> <%= current_mentee.enrollment_no %></li>
 								<li><span class="bold">Branch:</span> <%= current_mentee.branch %></li>
 								<li><span class="bold">Receipt No.:</span> <%= current_mentee.receipt_no %></li><br />
 								<%= link_to "Follow the link to download the lectures.", "/activities#lectures" %><br /><br />
-								<%= link_to "Download I-Card", "/download-icard", class: "btn btn-default", target: "_blank" %>							
+								<%= link_to "Download I-Card", "/download-icard.pdf", class: "btn btn-default", target: "_blank" %>							
 							</ul>
 					</div>
 				</div>

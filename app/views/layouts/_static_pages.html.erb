@@ -34,8 +34,7 @@
 							</ul>
 						<% else %>
 							<%= form_for(:session, url: "/login") do |f| %>								
-								<div class="form-group">
-									<%= render "shared/error_messages" %>
+								<div class="form-group">									
 									<label class="sr-only">Email</label>
 									<%= f.email_field :email, class: "form-control input-lg", placeholder: "Email" %>
 								</div>

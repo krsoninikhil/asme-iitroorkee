@@ -29,6 +29,7 @@
 				</div>
 			</div>
 			<div class="col-md-offset-1 col-md-5">
+				<div id="registration_error"></div>
 				<h5 class="text-center">Register for the programme</h5><br />
 				<div class="row">
 					<div class="col-md-12 registration-form">
@@ -42,7 +43,7 @@
 						<br />
 
 						<%= f.label :password %>
-						<%= f.password_field :password, class: "form-control", placeholder: "******" %>
+						<%= f.password_field :password, class: "form-control", placeholder: "Atleast 6 character long" %>
 						<br />
 
 						<%= f.submit "Register", class: "btn btn-primary" %>

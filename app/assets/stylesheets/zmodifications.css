@@ -34,3 +34,4 @@ form label {font-weight: 700;}
 .widget-box li{ padding: 5px; }
 .bold{ font-weight: 600;}
 .alert_login{ position: absolute; top: 110px; z-index: 1;}
+#saved_details{list-style-type: none;}

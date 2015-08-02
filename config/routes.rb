@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+	get 'download' => 'users#download_lectures'
+	get 'check-details' => 'users#check_details'
+	get 'download-icard' => 'users#id_card'
 	post 'login' => 'sessions#create'
 	get 'logout' => 'sessions#destroy'
   post 'create' => 'users#create'
