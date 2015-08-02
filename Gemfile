@@ -3,8 +3,6 @@ source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,6 +45,8 @@ gem 'wkhtmltopdf-binary'
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a
   # debugger console
+	# Use sqlite3 as the database for Active Record
+	gem 'sqlite3'
   gem 'byebug'
 
   # Access an IRB console on exceptions page and /console in development
