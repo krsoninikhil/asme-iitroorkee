@@ -21,9 +21,9 @@
 							<p id="id_card_msg"></p>
 							<ul id="saved_details">
 								<li><span class="bold">Contact No.:</span> <% if is_mentee?? contact_no = current_mentee.contact_no : "Not Found" %><%= contact_no  %><% end  %></li>
-								<li><span class="bold">Enrollment No.:</span> <%= current_mentee.enrollment_no %></li>
-								<li><span class="bold">Branch:</span> <%= current_mentee.branch %></li>
-								<li><span class="bold">Receipt No.:</span> <%= current_mentee.receipt_no %></li><br />
+								<li><span class="bold">Enrollment No.:</span> <%= if is_mentee?? current_mentee.enrollment_no : "Not Found" %></li>
+								<li><span class="bold">Branch:</span> <%= if is_mentee?? current_mentee.branch : "Not Found" %></li>
+								<li><span class="bold">Receipt No.:</span> <%= if is_mentee?? current_mentee.receipt_no : "Not Found" %></li><br />
 								<%= link_to "Follow the link to download the lectures.", "/activities#lectures" %><br /><br />
 								<%= link_to "Download I-Card", "/download-icard.pdf", class: "btn btn-default", target: "_blank" %>							
 							</ul>
