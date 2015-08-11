@@ -20,7 +20,7 @@
 					<div class="col-md-7">
 							<p id="id_card_msg"></p>
 							<ul id="saved_details">
-								<li><span class="bold">Contact No.:</span> <% if is_mentee?? contact_no = current_mentee.contact_no : "Not Found" %><%= contact_no  %><% end  %></li>
+								<li><span class="bold">Contact No.:</span> <%= is_mentee?? contact_no = current_mentee.contact_no : "Not Found" %></li>
 								<li><span class="bold">Enrollment No.:</span> <%= is_mentee?? current_mentee.enrollment_no : "Not Found" %></li>
 								<li><span class="bold">Branch:</span> <%= is_mentee?? current_mentee.branch : "Not Found" %></li>
 								<li><span class="bold">Receipt No.:</span> <%= is_mentee?? current_mentee.receipt_no : "Not Found" %></li><br />
@@ -69,9 +69,9 @@
 						<%= f.submit "Save", class: "btn btn-primary" %>
 						<% end %>
 						<script>$(document).ready(function(){
-								var branch= "<%= current_mentee.branch %>";
+								var branch= "<%= is_mentee?? current_mentee.branch : "" %>";
 								$('#branch option[value="'+branch+'"]').attr("selected", "selected");
-								var sex = "<%= current_mentee.sex %>";
+								var sex = "<%= is_mentee?? current_mentee.sex : "1" %>";
 								$('#mentee_sex input[value="'+sex+'"]').attr("checked", "checked");
 							});</script>
 					</div>
