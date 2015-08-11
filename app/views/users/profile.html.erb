@@ -25,7 +25,9 @@
 								<li><span class="bold">Branch:</span> <%= is_mentee?? current_mentee.branch : "Not Found" %></li>
 								<li><span class="bold">Receipt No.:</span> <%= is_mentee?? current_mentee.receipt_no : "Not Found" %></li><br />
 								<%= link_to "Follow the link to download the lectures.", "/activities#lectures" %><br /><br />
-								<%= link_to "Download I-Card", "/download-icard.pdf", class: "btn btn-default", target: "_blank" %>							
+								<% if is_mentee? %>
+								<%= link_to "Download I-Card", "/download-icard.pdf", class: "btn btn-default", target: "_blank" %>	
+								<% end %>
 							</ul>
 					</div>
 				</div>
