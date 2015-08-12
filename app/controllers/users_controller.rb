@@ -69,7 +69,7 @@ class UsersController < ApplicationController
 		end		
 		respond_to do |format|
       format.html
-		format.pdf do
+			format.pdf do
         render pdf: "robotic-mentorship-id-card-2015-16"   # Excluding ".pdf" extension.
       end
     end
