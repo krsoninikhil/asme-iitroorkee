@@ -1,4 +1,5 @@
-﻿<style>.bold{font-weight: bold} ul{list-style-type:none; font-size: 20px; margin-left:0;} h2{ text-align: center;} .profile img{max-width: 200px;} .header{ margin-bottom: 50px; border-bottom: 1px solid #343434;} .footer{ margin-top: 40px;} .box{border: 1px solid black; padding:0 25px 25px;}
+﻿<title>ID Card</title>
+<style>.bold{font-weight: bold} ul{list-style-type:none; font-size: 20px; margin-left:0;} h2{ text-align: center;} .profile img{max-width: 200px;} .header{ margin-bottom: 50px; border-bottom: 1px solid #343434;} .footer{ margin-top: 40px;} .box{border: 1px solid black; padding:0 25px 25px;}
 </style>
 <%= wicked_pdf_stylesheet_link_tag "bootstrap.css" %>
 <body>
@@ -19,7 +20,8 @@
 			</ul>
 		</div>
 		<div class="col-xs-5 profile">
-			<%= wicked_pdf_image_tag "uploads/#{current_mentee.image}" %>
+			<% current_mentee.image? ? profile_pic= current_mentee.image : "default_zigoby.png" %>
+			<%= cl_image_tag(profile_pic, :width => 200) %>
 		</div>
 	</div>
 	<div class="col-xs-12 footer">

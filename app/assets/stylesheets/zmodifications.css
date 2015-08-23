@@ -35,3 +35,5 @@ form label {font-weight: 700;}
 .bold{ font-weight: 600;}
 .alert_login{ position: absolute; top: 110px; z-index: 1;}
 #saved_details{list-style-type: none;}
+#uploading{display:none; color: #909090; font-weight: bold;}
+#uploading_done{display:none; color: green; font-weight: bold;}

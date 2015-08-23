@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: asmeiitr
+  api_key: '359975377473789'
+  api_secret: iiDuG_eKWNLpHfrWfwE6LR0RwQY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: asmeiitr
+  api_key: '359975377473789'
+  api_secret: iiDuG_eKWNLpHfrWfwE6LR0RwQY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: asmeiitr
+  api_key: '359975377473789'
+  api_secret: iiDuG_eKWNLpHfrWfwE6LR0RwQY
+  enhance_image_tag: true
+  static_image_support: false

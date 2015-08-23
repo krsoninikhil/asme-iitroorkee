@@ -41,6 +41,7 @@ gem 'bcrypt',               '> 3.1.7'
 gem 'pdfkit'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'cloudinary'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a
