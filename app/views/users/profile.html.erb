@@ -10,14 +10,13 @@
 	</div>
 </section>
 <%= cloudinary_js_config %>
-<%-# Cloudinary::Uploader.upload(Rails.root.join('app/assets/images', 'profile.jpg')) -%>
 <section id="smartexchange" class="sep-top-2x sep-bottom-2x">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="section-title">
 					<h5 class="bordered-left upper"><%= current_user.email %></h5>
-					<div class="col-md-5"><!-- <img src="/assets/<%= @profile_pic %>" style="max-width: 200px; margin-bottom: 25px;"> -->
+					<div class="col-md-5">
 					<%= cl_image_tag(@profile_pic, :width => 200) %></div>
 					<div class="col-md-7">
 							<p id="id_card_msg"></p>
@@ -66,8 +65,7 @@
 						
 						<br />
 						<%= f.label :image %>
-						<%= f.file_field :image %>	
-					<!-- <%= cl_image_upload_tag(:image, :public_id => "image_#{current_user.id}") %><span id="uploading">uploading...</span><span id="uploading_done">Done!</span> -->
+						<%= f.file_field :image %>					
 						<br />
 						<br />
 
@@ -85,13 +83,3 @@
 		</div>
 	</div>
 </section>
-<script>
-$(document).ready(function(){
-	$(".cloudinary-fileupload").change(function(){
-		$("#uploading").show();
-	});
-	$(".cloudinary-fileupload").bind('fileuploaddone', function(){
-		$("#uploading_done").show();
-	});
-});
-</script>

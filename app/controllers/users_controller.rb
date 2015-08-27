@@ -24,11 +24,11 @@ class UsersController < ApplicationController
 		if params[:mentee][:image]
 			 uploaded_io = params[:mentee][:image]
 			 file_ext = File.extname(uploaded_io.original_filename)
-			 @mentee.image = "image_#{current_mentee.id}_#{current_user.id}#{file_ext}" #uploaded_io.original_filename
+			 @mentee.image = "image_#{current_user.id}#{file_ext}" #uploaded_io.original_filename
 			 File.open(Rails.root.join('app/assets/images', 'uploads', @mentee.image), 'wb') do |file|
 				 file.write(uploaded_io.read)
 			 end
-			 Cloudinary::Uploader.upload(File.open(Rails.root.join('app/assets/images', 'uploads', @mentee.image)), :public_id => "image_#{current_mentee.id}_#{current_user.id}")
+			 Cloudinary::Uploader.upload(File.open(Rails.root.join('app/assets/images', 'uploads', @mentee.image)), :public_id => "image_#{current_user.id}")
 		end
 		# if params[:image].present?
 			# preloaded = Cloudinary::PreloadedFile.new(params[:image])         
