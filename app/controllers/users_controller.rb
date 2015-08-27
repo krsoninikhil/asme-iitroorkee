@@ -21,19 +21,20 @@ class UsersController < ApplicationController
 			@mentee = Mentee.new(mentee_params)
 			@mentee.user_id = current_user.id
 		end
-		# if params[:mentee][:image]
-			# uploaded_io = params[:mentee][:image]
-			# file_ext = File.extname(uploaded_io.original_filename)
-			# @mentee.image = "image_#{current_mentee.id}_#{current_user.id}#{file_ext}" #uploaded_io.original_filename
-			# File.open(Rails.root.join('app/assets/images', 'uploads', @mentee.image), 'wb') do |file|
-				# file.write(uploaded_io.read)
-			# end
-		# end
-		if params[:image].present?
-			preloaded = Cloudinary::PreloadedFile.new(params[:image])         
-			raise "Invalid upload signature" if !preloaded.valid?
-			@mentee.image = preloaded.identifier
+		if params[:mentee][:image]
+			 uploaded_io = params[:mentee][:image]
+			 file_ext = File.extname(uploaded_io.original_filename)
+			 @mentee.image = "image_#{current_mentee.id}_#{current_user.id}#{file_ext}" #uploaded_io.original_filename
+			 File.open(Rails.root.join('app/assets/images', 'uploads', @mentee.image), 'wb') do |file|
+				 file.write(uploaded_io.read)
+			 end
+			 Cloudinary::Uploader.upload(File.open(Rails.root.join('app/assets/images', 'uploads', @mentee.image)), :public_id => "image_#{current_mentee.id}_#{current_user.id}")
 		end
+		# if params[:image].present?
+			# preloaded = Cloudinary::PreloadedFile.new(params[:image])         
+			# raise "Invalid upload signature" if !preloaded.valid?
+			# @mentee.image = preloaded.identifier
+		# end
 		if @mentee.save
 			redirect_to "/my-profile/?saved=true"
 		else 
