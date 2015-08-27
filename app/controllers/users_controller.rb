@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		@user = User.new
 		@mentee = Mentee.new
 		if is_mentee? && current_mentee.image
-			@profile_pic = "#{current_mentee.image}"
+			@profile_pic = "v2/#{current_mentee.image}"
 		else 
 			@profile_pic = "default_zigoby.png"
 		end
