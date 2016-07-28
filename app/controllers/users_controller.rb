@@ -82,7 +82,8 @@ class UsersController < ApplicationController
   end
 	
 	def download_lectures
-		if params[:lecture].in?(['l1.pdf', 'l2.pptx', 'l3.pptx']) 
+		if params[:lecture].in?(['Lecture1.pdf', 'Lecture2.pdf', 'Lecture3.pdf','Lecture4.pdf','Lecture5.pdf',
+			'Lecture6.pdf','Lecture7.pdf']) 
 			redirect_to "/data/"+params[:lecture] 
 		else 
 			redirect_to "/activities?conducted=false"
