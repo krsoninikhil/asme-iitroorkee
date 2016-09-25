@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'events' => 'static_pages#events'
   get 'involvements' => 'static_pages#involvements'
   get 'mentorship' => 'static_pages#mentorship'	
+  get 'gallery' => 'static_pages#gallery'
   get 'contact-us' => 'static_pages#contact_us'
 
   # The priority is based upon order of creation: first created -> highest priority.

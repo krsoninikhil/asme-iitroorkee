@@ -18,6 +18,10 @@ class StaticPagesController < ApplicationController
   def mentorship
 		@user = User.new
   end
+
+   def gallery
+    @user = User.new
+  end
 	
 	def contact_us
 		@user = User.new
